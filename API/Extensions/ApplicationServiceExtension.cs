@@ -13,14 +13,14 @@ namespace API.Extensions
 {
     public static class ApplicationServiceExtension
     {
-                public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration config)
+            public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration config)
         {
 
             services.AddDbContext<DataContext>(options=>
             {
                 options.UseSqlServer(config.GetConnectionString("DefaultConnection"));
-                services.AddScoped<ITokenService,TokenService>();
             });
+            services.AddScoped<ITokenService,TokenService>();
             return services;
         }
     }

@@ -27,7 +27,7 @@ namespace API.Controllers
             return await _context.Users.ToListAsync();
         }
         [Authorize]
-         [HttpGet("{Id}")]
+        [HttpGet("{Id}")]
         public async Task< ActionResult<AppUser>> GetUser(int id)
         {
             return await _context.Users.FindAsync(id);
